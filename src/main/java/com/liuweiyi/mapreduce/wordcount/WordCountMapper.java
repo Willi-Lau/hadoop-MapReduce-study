@@ -8,6 +8,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 /**
+ * map阶段每一行会调用一次 一个map一次行处理一行数据
  * KEYIN : map阶段输入的key的类型 LongWritable
  * VALUEIN : map阶段输入的value类型 ： Text
  * KEYOUT : map阶段输出的key类型： Text
