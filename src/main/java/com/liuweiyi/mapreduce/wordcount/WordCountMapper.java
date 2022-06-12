@@ -11,8 +11,20 @@ import java.io.IOException;
  * map阶段每一行会调用一次 一个map一次行处理一行数据
  * KEYIN : map阶段输入的key的类型 LongWritable
  * VALUEIN : map阶段输入的value类型 ： Text
- * KEYOUT : map阶段输出的key类型： Text
- * VALUEOUT : map阶段输出的value类型 IntWritable
+ * KEYOUT : map阶段输出的key类型： Text 统计字符串样式
+ * VALUEOUT : map阶段输出的value类型 IntWritable 统计每种样式数量
+ * e.g.
+ * 输入：
+ *      liuweiyi liuweiyi
+ *      dsp dsp
+ *      kafka
+ *  输出
+ *      keyout  valueout
+ *      liuweiyi 1
+ *      liuweiyi 1
+ *      dsp      1
+ *      dsp      1
+ *      kafka    1
  */
 public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     //放到这里原因是 map会来会调用 会增加JVM heap压力
