@@ -1,4 +1,4 @@
-package com.liuweiyi.mapreduce.writable;
+package com.liuweiyi.mapreduce.writeableCompareable;
 
 
 import org.apache.hadoop.conf.Configuration;
@@ -20,8 +20,8 @@ public class FlowDriver {
         job.setMapperClass(FlowMapper.class);
         job.setReducerClass(FlowReducer.class);
         //设置mapper输出的key value类型
-        job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(FlowBean.class);
+        job.setMapOutputKeyClass(FlowBean.class);
+        job.setMapOutputValueClass(Text.class);
         //设置最终输出的key value类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);

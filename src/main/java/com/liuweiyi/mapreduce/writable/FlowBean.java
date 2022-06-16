@@ -7,7 +7,9 @@ import org.apache.hadoop.io.Writable;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
-
+/**
+ * 此例子实现对象序列化反序列化
+ */
 @NoArgsConstructor
 @Data
 public class FlowBean implements Writable {

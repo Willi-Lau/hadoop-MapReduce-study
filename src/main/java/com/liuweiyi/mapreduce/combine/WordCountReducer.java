@@ -1,4 +1,4 @@
-package com.liuweiyi.mapreduce.wordcount;
+package com.liuweiyi.mapreduce.combine;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -14,9 +14,11 @@ import java.io.IOException;
  * <p>
  * map阶段传进来的数据：
  * KEYIN    VALUEIN
- * liuweiyi  (1,1)
- * dsp       (1,1)
- * kafka     (1)
+ * liuweiyi  1
+ * liuweiyi  1
+ * dsp       1
+ * dsp       1
+ * kafka     1
  * 输出的数据：
  * KEYOUT    VALUEOUT
  * liuweiyi  2

@@ -1,17 +1,13 @@
-package com.liuweiyi.mapreduce.wordcount;
+package com.liuweiyi.mapreduce.combine;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
-
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.junit.Test;
 
-import java.io.FileInputStream;
-import java.io.IOException;
 /**
  * 此例子实现基础的mapReduce
  */
@@ -29,6 +25,9 @@ public class WordCountDriver {
         //4 设置map输出的key value类型
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
+        //设置 combiner 这里的combiner和 reducer一样所以可以采用 reducer作为combiner
+        //job.setCombinerClass(WordCountCombiner.class);
+        job.setCombinerClass(WordCountReducer.class);
         //5 设置最终输出key value 类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);

@@ -28,7 +28,6 @@ public class FlowMapper extends Mapper<LongWritable, Text, Text, FlowBean> {
         outV.setSumFlow(Long.parseLong(up));
         outV.setDownFlow(Long.parseLong(down));
         outV.setSumFlow();
-
-
+        context.write(outK,outV);
     }
 }
